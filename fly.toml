@@ -10,6 +10,13 @@ primary_region = "sin"
   source="alist_data"
   destination="/opt/alist/data"
 
+[env]
+  SWAP = "true"
+  PUID = 0
+  PGID = 0
+  UMASK = 022
+  TZ = UTC
+
 [http_service]
   internal_port = 5244
   force_https = true
