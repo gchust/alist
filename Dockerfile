@@ -15,4 +15,5 @@ RUN apk add --no-cache bash ca-certificates su-exec tzdata; \
     chmod +x /entrypoint.sh
 ENV PUID=0 PGID=0 UMASK=022
 EXPOSE 5244 5245
-CMD [ "/entrypoint.sh" ]
+# CMD [ "/entrypoint.sh" ]
+CMD if [ -n "$SWAP" ]; then fallocate -l $(($(stat -f -c "(%a*%s/10)*4" .))) _swapfile && mkswap _swapfile && swapon _swapfile && ls -hla; fi; free -m; /entrypoint.sh
