@@ -12,10 +12,10 @@ primary_region = "sin"
 
 [env]
   SWAP = "true"
-  PUID = 0
-  PGID = 0
-  UMASK = 022
-  TZ = UTC
+  PUID = "0"
+  PGID = "0"
+  UMASK = "022"
+  TZ = "UTC"
 
 [http_service]
   internal_port = 5244
